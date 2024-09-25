@@ -15,7 +15,7 @@ jobs:
         env:
           JF_URL: https://dockeroidca.jfrogdev.org
         with:
-          oidc-provider-name: docker-ocid
+          oidc-provider-name: jfrog-ocid
       - name: Test OIDC
         run: |
           echo "Username: $(echo ${{ steps.setup-cli.outputs.oidc-user }} | tr [a-z] [A-Z])"
