@@ -1,6 +1,6 @@
 on:
-    workflow_dispatch:
-    workflow_call:
+  workflow_dispatch:
+  workflow_call:
 
 jobs:
   shared-oidc:
@@ -11,9 +11,11 @@ jobs:
     steps:
       - name: Connect to Artifactory
         id: setup-cli
-        uses: jfrog/jfrog-ocid@v4
+        uses: jfrog/setup-jfrog-cli@v4
         with:
           oidc-provider-name: jfrog-ocid
+          JF_URL: https://dockeroidca.jfrogdev.org
+
       - name: Test OIDC
         run: |
           echo "Username: $(echo ${steps.setup-cli.outputs.oidc-user} | tr [a-z] [A-Z])"
