@@ -26,4 +26,4 @@ jobs:
           password: ${{ steps.setup-cli.outputs.oidc-token }}
 
       - name: Test pull
-        run: docker pull jfrog.oceaneering.com/dockerhub-remote/redis:latest
+        run: docker pull dockeroidca.jfrogdev.org/dockerocid/redis:latest
