@@ -7,4 +7,4 @@ jobs:
       contents: read
       id-token: write
     secrets: inherit
-    uses: Oceaneering/scoe-github-workflows/.github/workflows/shared.yaml@develop
+    uses: oidc-test-repo/.github/workflows/shared.yaml@develop
