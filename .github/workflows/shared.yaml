@@ -21,7 +21,7 @@ jobs:
           echo "Username: $(echo ${{ steps.setup-cli.outputs.oidc-user }} | tr [a-z] [A-Z])"
 
       - name: Login to JFrog Artifactory docker registry
-        uses: docker/login-action@main
+        uses: docker/login-action@v3
         with:
           registry: dockeroidca.jfrogdev.org
           username: ${{ steps.setup-cli.outputs.oidc-user }}
