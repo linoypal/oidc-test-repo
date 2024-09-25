@@ -1,0 +1,10 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  shared-oidc:
+    permissions:
+      contents: read
+      id-token: write
+    secrets: inherit
+    uses: Oceaneering/scoe-github-workflows/.github/workflows/shared.yaml@develop
