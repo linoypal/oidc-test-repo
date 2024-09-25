@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Connect to Artifactory
         id: setup-cli
-        uses: jfrog/docker-ocid@main
+        uses: jfrog/docker-ocid@v4
         env:
           JF_URL: https://dockeroidca.jfrogdev.org
         with:
