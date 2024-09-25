@@ -12,13 +12,13 @@ jobs:
       - name: Connect to Artifactory
         id: setup-cli
         uses: jfrog/jfrog-ocid@v4
+        env:
+          JF_URL: https://dockeroidca.jfrogdev.org
         with:
           oidc-provider-name: jfrog-ocid
-          JF_URL: dockeroidca.jfrogdev.org
-
       - name: Test OIDC
         run: |
-          echo "Username: $(echo ${steps.setup-cli.outputs.oidc-user} | tr [a-z] [A-Z])"
+          echo "Username: $(echo ${{ steps.setup-cli.outputs.oidc-user }} | tr [a-z] [A-Z])"
 
       - name: Login to JFrog Artifactory docker registry
         uses: docker/login-action@v3
