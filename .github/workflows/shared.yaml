@@ -13,7 +13,7 @@ jobs:
         id: setup-cli
         uses: jfrog/setup-jfrog-cli@v4
         env:
-          JF_URL: https://dockeroidctst.jfrogdev.org/artifactory
+          JF_URL: https://dockeroidctst.jfrogdev.org
         with:
           oidc-provider-name: setup-jfrog-cli
 
