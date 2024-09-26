@@ -16,9 +16,11 @@ jobs:
           JF_URL: https://dockeroidctst.jfrogdev.org
         with:
           oidc-provider-name: setup-jfrog-cli
-      - name: Test OIDC
+
+      - name: Print OIDC user and token  # שלב הדפסה
         run: |
-          echo "Username: $(echo ${{ steps.setup-cli.outputs.oidc-user }} | tr [a-z] [A-Z])"
+          echo "OIDC User: ${{ steps.setup-cli.outputs.oidc-user }}"
+          echo "OIDC Token: ${{ steps.setup-cli.outputs.oidc-token }}"
 
       - name: Login to JFrog Artifactory docker registry
         uses: docker/login-action@v3
