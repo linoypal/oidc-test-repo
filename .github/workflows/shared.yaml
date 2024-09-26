@@ -14,6 +14,7 @@ jobs:
         uses: jfrog/setup-jfrog-cli@v4
         env:
           JF_URL: https://dockeroidctst.jfrogdev.org
+          JF_PROJECT: setup-jfrog-cli
         with:
           oidc-provider-name: setup-jfrog-cli
 
