@@ -23,6 +23,10 @@ jobs:
           echo "OIDC User: ${{ steps.setup-cli.outputs.oidc-user }}"
           echo "OIDC Token: ${{ steps.setup-cli.outputs.oidc-token }}"
 
+      - name: Test connection to Artifactory
+        run: |
+          curl -I https://secureartifactory.com/artifactory/api/system/ping
+
       - name: Login to JFrog Artifactory docker registry
         uses: docker/login-action@v3
         with:
