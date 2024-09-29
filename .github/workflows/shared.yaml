@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Test connection to Artifactory
         run: |
-          curl -I https://dockeroidctst2.jfrogdev.org/artifactory/api/system/ping
+          curl -I https://dockeroidctst2.jfrogdev.org/api/system/ping
 
       - name: Print OIDC user and token
         run: |
